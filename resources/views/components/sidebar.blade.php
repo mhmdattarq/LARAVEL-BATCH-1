@@ -31,17 +31,29 @@
 
     <ul class="menu-inner py-1">
         <!-- Page -->
-        <li class="menu-item active">
-            <a href="index.html" class="menu-link">
+        <li class="menu-item active mb-3">
+            <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon icon-base ti tabler-dashboard"></i>
                 <div data-i18n="dashboard">dashboard</div>
             </a>
         </li>
         <li class="menu-item">
-            <a href="page-2.html" class="menu-link">
-                <i class="menu-icon icon-base ti tabler-app-window"></i>
-                <div data-i18n="Page 2">Page 2</div>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon icon-base ti tabler-school"></i>
+                <div data-i18n="Mahasiswa">Mahasiswa</div>
             </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('form.mahasiswa') }}" class="menu-link">
+                        <div data-i18n="Form Tambah Mahasiswa">Form Mahasiswa</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="layouts-content-navbar.html" class="menu-link">
+                        <div data-i18n="Tabel Mahasiswa">Tabel Mahasiswa</div>
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 </aside>
