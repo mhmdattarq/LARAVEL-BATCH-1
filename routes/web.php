@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AngelController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
@@ -13,5 +12,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('pages.Mahasiswa.FormMahasiswa');
 // });
 
+// Dashboard
 Route::get('/', [DashboardController::class, 'tampilanDashboard'])->name('dashboard');
+// mahasiswa
 Route::get('/form-mahasiswa', [MahasiswaController::class, 'create'])->name('form.mahasiswa');
