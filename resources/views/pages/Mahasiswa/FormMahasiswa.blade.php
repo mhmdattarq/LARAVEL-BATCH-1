@@ -7,6 +7,7 @@
             </div>
             <div class="card-body">
                 <form action="{{ route('store.mahasiswa') }}" method="POST">
+                    @csrf
                     <div class="mb-6">
                         <label class="form-label">Nim</label>
                         <div class="input-group input-group-merge">

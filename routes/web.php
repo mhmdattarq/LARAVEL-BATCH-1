@@ -8,5 +8,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'tampilanDashboard'])->name('dashboard');
 // mahasiswa
 Route::get('/form-mahasiswa', [MahasiswaController::class, 'create'])->name('form.mahasiswa');
-Route::post('/mahasiswa-store', [MahasiswaController::class, 'store'])->name('store.mahasiswa');
+Route::post('/form-mahasiswa-store', [MahasiswaController::class, 'store'])->name('store.mahasiswa');
 Route::get('/tabel-mahasiswa', [MahasiswaController::class, 'index'])->name('tabel.mahasiswa');
