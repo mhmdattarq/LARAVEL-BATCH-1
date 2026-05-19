@@ -55,6 +55,42 @@
                 </li>
             </ul>
         </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon icon-base ti tabler-school"></i>
+                <div data-i18n="Dosen">Dosen</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('form.dosen') }}" class="menu-link">
+                        <div data-i18n="Form Tambah Dosen">Form Dosen</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="" class="menu-link">
+                        <div data-i18n="Tabel Dosen">Tabel Dosen</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon icon-base ti tabler-school"></i>
+                <div data-i18n="Mahasiswa">Jurusan</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('form.jurusan') }}" class="menu-link">
+                        <div data-i18n="Form Tambah Mahasiswa">Form Jurusan</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="" class="menu-link">
+                        <div data-i18n="Tabel Mahasiswa">Tabel Mahasiswa</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </aside>
 
