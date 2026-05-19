@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="layouts-content-navbar.html" class="menu-link">
+                    <a href="{{ route('tabel.mahasiswa') }}" class="menu-link">
                         <div data-i18n="Tabel Mahasiswa">Tabel Mahasiswa</div>
                     </a>
                 </li>
