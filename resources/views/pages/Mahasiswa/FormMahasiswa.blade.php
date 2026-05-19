@@ -3,61 +3,36 @@
     <div class="col-xl">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Basic with Icons</h5>
-                <small class="text-body-secondary float-end">Merged input group</small>
+                <h5 class="mb-0">Form Tambah Mahasiswa</h5>
             </div>
             <div class="card-body">
-                <form>
+                <form action="{{ route('store.mahasiswa') }}" method="POST">
                     <div class="mb-6">
-                        <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
+                        <label class="form-label">Nim</label>
                         <div class="input-group input-group-merge">
                             <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                     class="icon-base ti tabler-user"></i></span>
-                            <input type="text" class="form-control" id="basic-icon-default-fullname"
-                                placeholder="John Doe" aria-label="John Doe"
-                                aria-describedby="basic-icon-default-fullname2" />
+                            <input type="text" class="form-control" name="nim" placeholder="Masukkan Nim Anda.." />
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label class="form-label" for="basic-icon-default-company">Company</label>
+                        <label class="form-label">Nama</label>
                         <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-company2" class="input-group-text"><i
-                                    class="icon-base ti tabler-building"></i></span>
-                            <input type="text" id="basic-icon-default-company" class="form-control"
-                                placeholder="ACME Inc." aria-label="ACME Inc."
-                                aria-describedby="basic-icon-default-company2" />
+                            <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                    class="icon-base ti tabler-user"></i></span>
+                            <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Anda.." />
                         </div>
                     </div>
                     <div class="mb-6">
-                        <label class="form-label" for="basic-icon-default-email">Email</label>
+                        <label class="form-label">Alamat</label>
                         <div class="input-group input-group-merge">
-                            <span class="input-group-text"><i class="icon-base ti tabler-mail"></i></span>
-                            <input type="text" id="basic-icon-default-email" class="form-control" placeholder="john.doe"
-                                aria-label="john.doe" aria-describedby="basic-icon-default-email2" />
-                            <span id="basic-icon-default-email2" class="input-group-text">@example.com</span>
-                        </div>
-                        <div class="form-text">You can use letters, numbers & periods</div>
-                    </div>
-                    <div class="mb-6">
-                        <label class="form-label" for="basic-icon-default-phone">Phone No</label>
-                        <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-phone2" class="input-group-text"><i
-                                    class="icon-base ti tabler-phone"></i></span>
-                            <input type="text" id="basic-icon-default-phone" class="form-control phone-mask"
-                                placeholder="658 799 8941" aria-label="658 799 8941"
-                                aria-describedby="basic-icon-default-phone2" />
+                            <span id="basic-icon-default-fullname2" class="input-group-text"><i
+                                    class="icon-base ti tabler-user"></i></span>
+                            <input type="text" class="form-control" name="alamat"
+                                placeholder="Masukkan Alamat Anda.." />
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <label class="form-label" for="basic-icon-default-message">Message</label>
-                        <div class="input-group input-group-merge">
-                            <span id="basic-icon-default-message2" class="input-group-text"><i
-                                    class="icon-base ti tabler-message-dots"></i></span>
-                            <textarea id="basic-icon-default-message" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?"
-                                aria-label="Hi, Do you have a moment to talk Joe?" aria-describedby="basic-icon-default-message2"></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <button type="submit" class="btn btn-success">Kirim</button>
                 </form>
             </div>
         </div>

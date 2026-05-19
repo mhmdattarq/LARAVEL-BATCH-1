@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -27,7 +28,22 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validasi data
+        $request->validate([
+            'nim' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        // kirim datanya ke dataabse
+        Mahasiswa::create([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+        ]);
+
+        // lalu arahkan dia ke rute tabel mahasiswa
+        return redirect()->route('tabel.mahasiswa');
     }
 
     /**
