@@ -12,8 +12,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswa = Mahasiswa::all();
-        return view('pages.mahasiswa.TabelMahasiswa', compact('mahasiswa'));
+        $mahasiswas = Mahasiswa::all();
+        return view('pages.mahasiswa.TabelMahasiswa', compact('mahasiswas'));
     }
 
     /**
@@ -60,7 +60,8 @@ class MahasiswaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        return view('pages.mahasiswa.EditMahasiswa', compact('mahasiswa'));
     }
 
     /**
@@ -68,7 +69,25 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // validasi data
+        $request->validate([
+            'nim' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        // cari data berdasarkan id
+        $mahasiswa = Mahasiswa::findOrFail($id);
+
+        // update data berdasarkan id
+        $mahasiswa->update([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+        ]);
+
+        // lalu bailikin dia ke tabel mahasiswa
+        return redirect()->route('tabel.mahasiswa');
     }
 
     /**

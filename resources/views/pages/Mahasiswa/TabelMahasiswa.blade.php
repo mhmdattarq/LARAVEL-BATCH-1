@@ -7,34 +7,24 @@
             <table class="table text-center">
                 <thead>
                     <tr>
-                        <th>Actions</th>
                         <th>No</th>
                         <th>Nim</th>
                         <th>Nama</th>
                         <th>Alamat</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                    @foreach ($mahasiswa as $item)
+                    @foreach ($mahasiswas as $mahasiswa)
                         <tr>
-                            <td>
-                                <div class="dropdown">
-                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                        data-bs-toggle="dropdown">
-                                        <i class="icon-base ti tabler-dots-vertical"></i>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="icon-base ti tabler-pencil me-2"></i> Edit</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="icon-base ti tabler-trash me-2"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </td>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->nim }}</td>
-                            <td>{{ $item->nama }}</td>
-                            <td>{{ $item->alamat }}</td>
+                            <td>{{ $mahasiswa->nim }}</td>
+                            <td>{{ $mahasiswa->nama }}</td>
+                            <td>{{ $mahasiswa->alamat }}</td>
+                            <td>
+                                <a href="{{ route('edit.mahasiswa', $mahasiswa->id) }}" class="btn btn-warning">Edit</a> | <a
+                                    href="" class="btn btn-danger">Hapus</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

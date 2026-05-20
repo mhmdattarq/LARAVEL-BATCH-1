@@ -12,10 +12,13 @@ Route::get('/', [DashboardController::class, 'tampilanDashboard'])->name('dashbo
 Route::get('/form-mahasiswa', [MahasiswaController::class, 'create'])->name('form.mahasiswa');
 Route::post('/form-mahasiswa-store', [MahasiswaController::class, 'store'])->name('store.mahasiswa');
 Route::get('/tabel-mahasiswa', [MahasiswaController::class, 'index'])->name('tabel.mahasiswa');
+Route::get('/form-edit-mahasiswa/{id}', [MahasiswaController::class, 'edit'])->name('edit.mahasiswa');
+Route::put('/form-update-mahasiswa/{id}', [MahasiswaController::class, 'update'])->name('update.mahasiswa');
 
 // Dosen
 Route::get('/form-dosen', [DosenController::class, 'create'])->name('form.dosen');
 Route::post('/form-dosen-store', [DosenController::class, 'store'])->name('store.dosen');
 Route::get('/tabel-dosen', [DosenController::class, 'index'])->name('tabel.dosen');
+
 // Jurusan
 Route::get('/form-jurusan', [JurusanController::class, 'create'])->name('form.jurusan');
