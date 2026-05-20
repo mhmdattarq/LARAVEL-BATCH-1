@@ -15,6 +15,7 @@ Route::get('/tabel-mahasiswa', [MahasiswaController::class, 'index'])->name('tab
 
 // Dosen
 Route::get('/form-dosen', [DosenController::class, 'create'])->name('form.dosen');
-
+Route::post('/form-dosen-store', [DosenController::class, 'store'])->name('store.dosen');
+Route::get('/tabel-dosen', [DosenController::class, 'index'])->name('tabel.dosen');
 // Jurusan
 Route::get('/form-jurusan', [JurusanController::class, 'create'])->name('form.jurusan');

@@ -6,14 +6,14 @@
                 <h5 class="mb-0">Form Tambah Dosen</h5>
             </div>
             <div class="card-body">
-                <form action="" method="POST">
+                <form action="{{ route('store.dosen') }}" method="POST">
                     @csrf
                     <div class="mb-6">
-                        <label class="form-label">Nim</label>
+                        <label class="form-label">Nik</label>
                         <div class="input-group input-group-merge">
                             <span id="basic-icon-default-fullname2" class="input-group-text"><i
                                     class="icon-base ti tabler-user"></i></span>
-                            <input type="text" class="form-control" name="nim" placeholder="Masukkan Nim Anda.." />
+                            <input type="text" class="form-control" name="nik" placeholder="Masukkan Nik Anda.." />
                         </div>
                     </div>
                     <div class="mb-6">

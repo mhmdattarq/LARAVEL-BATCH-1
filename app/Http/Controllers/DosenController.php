@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dosen;
 use Illuminate\Http\Request;
 
 class DosenController extends Controller
@@ -11,7 +12,8 @@ class DosenController extends Controller
      */
     public function index()
     {
-        //
+        $dosen = Dosen::all();
+        return view('pages.dosen.TabelDosen', compact('dosen'));
     }
 
     /**
@@ -19,6 +21,7 @@ class DosenController extends Controller
      */
     public function create()
     {
+
         return view('pages.dosen.FormDosen');
     }
 
@@ -27,7 +30,19 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nik' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        Dosen::create([
+            'nik' => $request->nik,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+        ]);
+
+        return redirect()->route('tabel.dosen');
     }
 
     /**
