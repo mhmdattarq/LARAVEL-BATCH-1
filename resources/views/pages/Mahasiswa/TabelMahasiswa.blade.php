@@ -11,7 +11,8 @@
                         <th>Nim</th>
                         <th>Nama</th>
                         <th>Alamat</th>
-                        <th>Actions</th>
+                        <th>Edit</th>
+                        <th>Hapus</th>
                     </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -22,8 +23,15 @@
                             <td>{{ $mahasiswa->nama }}</td>
                             <td>{{ $mahasiswa->alamat }}</td>
                             <td>
-                                <a href="{{ route('edit.mahasiswa', $mahasiswa->id) }}" class="btn btn-warning">Edit</a> | <a
-                                    href="" class="btn btn-danger">Hapus</a>
+                                <a href="{{ route('edit.mahasiswa', $mahasiswa->id) }}" class="btn btn-warning">Edit</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('delete.mahasiswa', $mahasiswa->id) }}"
+                                    method="POST"id="delete{{ $mahasiswa->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" id="delete{{ $mahasiswa->id }}">Hapus</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
